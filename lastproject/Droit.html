@@ -2,34 +2,52 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiche d'Inscription - UPC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <nav class="nav-bar">
+         <img src="logoupc.png" alt="Logo de l'Université Protestante au Congo" class="logo-upc">
+       <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="apropos.html">A Propos</a></li>
+            <li><a href="Conditions.html">Admission</a></li>
+            <select class="select-faculte" onchange="if(this.value) window.location.href=this.value;">
+                    <option value="" disabled selected>Choisir une Faculté...</option>
+                    <option value="Fasi.html">Sciences Informatiques</option> 
+                    <option value="Medecine.html">Médecine</option>
+                    <option value="Droit.html">Droit</option>
+                    <option value="Economie.html">Économie</option>
+                    <option value="theologie.html">Théologie</option>
+                </select>
+        </ul>
+    </nav>
 
-    <header>
-        <p>UNIVERSITÉ PROTESTANTE AU CONGO</p>
+    <header class="fade-in">
+        <p style="font-size: 1.2rem; text-transform: uppercase;">Université Protestante au Congo</p>
         <p>Croisement des avenues de la Libération et de la Victoire</p>
         <p>Boîte Postale 4745 Kinshasa 2</p>
-        <p>Site web: www.upc-rdc.cd</p>
+        <p>Site web: <a href="http://www.upc-rdc.cd" style="color: rgb(25, 55, 90); text-decoration: none;">www.upc-rdc.cd</a></p>
     </header>
 
-
-    <main>
-        <h1>FICHE D'INSCRIPTION </h1>
+    <main class="slide-up">
+        <h1>FICHE D'INSCRIPTION</h1>
 
         <form action="soumettre.html" method="get">
             
-            <fieldset>
-                <label for="matricule">Matricule :</label>
-                <input type="text" id="matricule" name="matricule"  readonly placeholder="(Ne pas remplir)">
+            <fieldset style="background: linear-gradient(145deg, rgb(235, 240, 245), rgb(226, 232, 240));">
+                <p>
+                    <label for="matricule">Matricule :</label>
+                    <input type="text" id="matricule" name="matricule" readonly placeholder="(Ne pas remplir)" style="background-color: rgb(245, 247, 250); cursor: not-allowed;">
 
-                <label for="code">Code :</label>
-                <input type="text" id="code" name="code"  readonly placeholder="(Ne pas remplir)" >
+                    <label for="code">Code :</label>
+                    <input type="text" id="code" name="code" readonly placeholder="(Ne pas remplir)" style="background-color: rgb(245, 247, 250); cursor: not-allowed;">
+                </p>
             </fieldset>
-
     
-            <fieldset>
+            <fieldset class="slide-up" style="animation-delay: 0.1s;">
                 <legend>IDENTITÉ</legend>
                 
                 <p>
@@ -41,11 +59,14 @@
                 </p>
 
                 <p>
-                    <label for="sexe">Sexe :</label>
-                    <input type="radio" id="sexe" name="sexe" value="M" required>
-                    <label for="sexe">Masculin</label>
-                    <input type="radio" id="sexe" name="sexe" value="F" required>
-                    <label for="sexe">Féminin</label>
+                    <label>Sexe :</label>
+                    <span style="display: flex; gap: 15px; align-items: center; flex: 1; min-width: 200px;">
+                        <input type="radio" id="sexe_m" name="sexe" value="M" required style="min-width: auto; flex: none;">
+                        <label for="sexe_m" style="min-width: auto; margin-right: 15px;">Masculin</label>
+                        
+                        <input type="radio" id="sexe_f" name="sexe" value="F" required style="min-width: auto; flex: none;">
+                        <label for="sexe_f" style="min-width: auto;">Féminin</label>
+                    </span>
 
                     <label for="naissance">Lieu et date de naissance :</label>
                     <input type="date" id="naissance" name="naissance" required>
@@ -80,7 +101,7 @@
                     <input type="text" id="etat_civil" name="etat_civil" required>
                     
                     <label for="conjoint">Nom du conjoint :</label>
-                    <input type="text" id="conjoint" name="conjoint" required>
+                    <input type="text" id="conjoint" name="conjoint" placeholder="Optionnel">
                 </p>
 
                 <p>
@@ -90,7 +111,7 @@
 
                 <p>
                     <label for="adresse">Adresse de l'étudiant :</label>
-                    <input type="text" id="adresse" name="adresse" required>
+                    <input type="text" id="adresse" name="adresse" required placeholder="Avenue, Quartier, Commune...">
                 </p>
 
                 <p>
@@ -102,12 +123,11 @@
                 </p>
             </fieldset>
 
-
-            <fieldset>
+            <fieldset class="slide-up" style="animation-delay: 0.2s;">
                 <legend>ADMISSION</legend>
                 <p>
                     <label for="classe">Classe :</label>
-                    <input type="text" id="classe" name="classe" required>
+                    <input type="text" id="classe" name="classe" required placeholder="Ex: L1, L2...">
                     
                     <label for="faculte">Faculté sollicitée :</label>
                     <input type="text" id="faculte" name="faculte" required>
@@ -121,9 +141,8 @@
                     </select>
                 </p>
             </fieldset>
-
     
-            <fieldset>
+            <fieldset class="slide-up" style="animation-delay: 0.3s;">
                 <legend>AUTRES RENSEIGNEMENTS</legend>
                 
                 <p>
@@ -146,10 +165,9 @@
                     <label for="adresse_parents">Adresse des parents :</label>
                     <input type="text" id="adresse_parents" name="adresse_parents" required>
                 </p>
-
                 
-                <fieldset>
-                    <legend>Qui peut-on aviser en cas d'urgence ?</legend>
+                <fieldset style="margin-top: 25px; background-color: rgba(255,255,255,0.7);">
+                    <legend style="color: rgb(200, 50, 50);">En cas d'urgence, qui contacter ?</legend>
                     <p>
                         <label for="urgence_nom">Noms :</label>
                         <input type="text" id="urgence_nom" name="urgence_nom" required>
@@ -167,14 +185,13 @@
                 </fieldset>
             </fieldset>
         
-        <div class="container-bouton">
-    <button type="submit" class="btn-valider">SOUMETTRE LA FICHE D'INSCRIPTION</button>
-</div>
-</form>
+            <div class="container-bouton slide-up" style="animation-delay: 0.4s;">
+                <button type="submit" class="btn-valider">SOUMETTRE LA FICHE D'INSCRIPTION</button>
+            </div>
+        </form>
     </main>
 
-
-    <footer>
+    <footer style="text-align: center; padding: 20px; color: rgb(100,110,120);">
         <p><small>Cette fiche concerne les inscriptions en classes de recrutement et les inscriptions spéciales.</small></p>
     </footer>
 

@@ -8,22 +8,34 @@
 </head>
 <body>
    
-    <header class="hero">
-        <div class="section">
+    <nav class="nav-bar">
+        <img src="logoupc.png" alt="Logo de l'Université Protestante au Congo" class="logo-upc">
+         <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="apropos.html" class="active">A Propos</a></li>
+            <li><a href="Conditions.html">Admission</a></li>
+            <select class="select-faculte" onchange="if(this.value) window.location.href=this.value;">
+                    <option value="" disabled selected>Choisir une Faculté...</option>
+                    <option value="Fasi.html">Sciences Informatiques</option> 
+                    <option value="Medecine.html">Médecine</option>
+                    <option value="Droit.html">Droit</option>
+                    <option value="Economie.html">Économie</option>
+                    <option value="theologie.html">Théologie</option>
+                </select>
+        </ul>
+    </nav>
+    </nav>
+
+    <header class="hero-section fade-in">
+        <div class="hero-content">
             <h1>Université Protestante au Congo</h1>
             <p>"Vérité - Foi - Liberté"</p>
         </div>
-         <nav>
-           <ul class="nav-links"> 
-            <li class="fac">
-                <li><a href="index.html" class="fac-btn">Retour à l'accueil</a></li>
-            </li>
-        </nav>
-        </header>
+    </header>
 
     <main class="container">
         
-        <section class="intro">
+        <section class="intro slide-up">
             <h2 class="title">Notre Mission</h2>
             <p>L'Université Protestante au Congo (UPC) est une institution confessionnelle d'élite située à Kinshasa. Fondée sur des valeurs chrétiennes, elle forme aujourd'hui plus de <strong>8 000 étudiants</strong> pour devenir les leaders de demain en République Démocratique du Congo.</p>
         </section>
@@ -78,15 +90,17 @@
             </div>
         </section>
 
-        <section class="admission">
-            <h2>Prêt à nous rejoindre ?</h2>
-            <p>Les inscriptions sont ouvertes ! Préparez votre avenir au sein du "poumon universitaire francophone".</p>
-            <a href="Conditions.html" class="conditions">Autres renseignements ou conditions d'inscriptions </a>
+        <section class="admission slide-up" style="text-align: center; margin-top: 50px;">
+            <h2 class="title" style="text-align: center; margin-bottom: 20px;">Prêt à nous rejoindre ?</h2>
+            <p style="margin-bottom: 30px;">Les inscriptions sont ouvertes ! Préparez votre avenir au sein du "poumon universitaire francophone".</p>
+            <a href="Conditions.html" class="btn-primary">Autres renseignements ou conditions d'inscriptions</a>
         </section>
 
     </main>
-    <footer>2026 :Mulimbi malibilo</footer>
 
+    <footer style="text-align: center; padding: 20px; color: rgb(100,110,120); font-size: 0.9rem;">
+        &copy; 2026 : Mulimbi malibilo
+    </footer>
     
 </body>
 </html>

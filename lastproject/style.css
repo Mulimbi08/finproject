@@ -1,355 +1,393 @@
-/* 1. Reset : On enlève les marges par défaut du navigateur pour avoir le contrôle */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Pour que les bordures ne fassent pas déborder les boîtes */
+    box-sizing: border-box;
 }
-
-/* 2. Style du corps de la page */
 body {
-    font-family: Arial, sans-serif; /* Une   police simple et lisible */
-    line-height: 1.6; /* Espace entre les lignes pour que ce soit moins serré */
-    color: rgb(50, 50, 50); /* Couleur du texte : un gris très foncé presque noir */
-    background-color: rgb(245, 245, 245); /*  Fond de page gris très clair */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: rgb(40, 45, 50); 
+    background: linear-gradient(135deg, rgb(226, 232, 240), rgb(203, 213, 225));
+    background-attachment: fixed; 
+    overflow-x: hidden;
 }
-
-/* 3. La barre de navigation */
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* BARRE DE NAVIGATION */
 .nav-bar {
-    background-color: rgb(255, 255, 255); /* Fond blanc */
-    display: flex; /* Aligne le logo et les liens côte à côte */
-    justify-content: space-between; /* Pousse le logo à gauche et les liens à droite */
-    align-items: center; /* Centre verticalement les éléments */
-    padding: 10px 5%; /* Espace interne : 10px haut/bas, 5% sur les côtés */
-    border-bottom: 2px solid rgb(0, 51, 102); /* Une petite ligne bleue en bas */
-}
-
-.logo-upc {
-    height: 60px; /* On fixe la hauteur du logo pour qu'il ne soit pas trop grand */
-
-}
-
-.nav-links {
-    display: flex; /* Aligne les liens horizontalement */
-    list-style: none; /* Enlève les points des listes */
-    list-style-type: none; /* Enlève les numéros des listes */
-    margin: 0; /* Enlève les marges par défaut */
-    padding: auto;
-}
-.nav-link {
-    display: flex; /* Aligne les liens horizontalement */
-    list-style: none; /* Enlève les points des listes */
-    list-style-type: none; /* Enlève les numéros des listes */
-    margin: 0; /* Enlève les marges par défaut */
-    padding: auto;
-}
-.nav-links li {
-    margin-left: 20px; /* Espace entre chaque lien */
-}
-.nav-link li {
-    margin-left: 20px; /* Espace entre chaque lien */
-}
-
-.nav-links a {
-    text-decoration: none; /* Enlève le soulignement des liens */
-    color:white; /* Couleur bleue UPC */
-    font-weight: bold; /* Met le texte en gras */
-}
-.nav-link a {
-    text-decoration: none; /* Enlève le soulignement des liens */
-    color:rgb(0, 51, 102); /* Couleur bleue UPC */
-    font-weight: bold; /* Met le texte en gras */
-}
-
-/* 4. Section Hero (Le haut des pages) */
-.hero, .hero-section {
-    background-color: rgb(0, 51, 102); /* Un bleu profond pour faire ressortir le titre */
-    color: white; /* Texte blanc pour contraster avec le fond */
-    padding: 40px 5%; /* Grand espace pour donner de l'importance */
-    justify-content: space-between; /* Centre le contenu horizontalement */
-    align-items: center; /* Centre le contenu verticalement */
-    display: flex; /* Utilise Flexbox pour aligner les éléments */
-}
-
-
-
-
-/* 5. Les conteneurs et titres */
-.container, .renseignements, .main-btn {
-    max-width: 1000px; /* Empêche le contenu de s'étaler trop largement sur grand écran */
-    margin: 20px auto; /* Centre le bloc au milieu de la page */
-    padding: 20px;
-    background-color: rgb(255, 255, 255); /* Fond blanc pour le contenu */
-}
-
-h1 {
-    color:white; /* Tous les titres seront en bleu *
-    margin-bottom: 15px; /* Espace sous les titres */
-}
-h2, h3{
-    color: rgb(31, 31, 165); /* Tous les titres seront en bleu */
-    margin-bottom: 15px; /* Espace sous les titres */
-}
-
-/* 6. Les cartes (Sections "impo" et "facultés") */
-.impo, .facultéinfo, .facultédroit, .facultétheologie, .facultéfase, .facultémedecine, .btn {
-    border: 1px solid rgb(220, 220, 220); /* Bordure fine grise */
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px; /* Arrondit légèrement les coins */
-}
-
-
-
-/* 8. Les boutons (CTA) */
-.cta-btn, .conditions {
-    display: inline-block; /* Permet de donner une forme de bouton */
-    background-color: rgb(0, 51, 102); /* Une couleur verte pour l'action (Inscription) */
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-.fac {
-    position: relative;           /* Indispensable pour que le menu sache où s'afficher */
-    list-style: none;
-}
-
-.fac-btn {
-    color: white ;      /* Force le blanc sur le fond bleu */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition:all 0.5s ease; /* Transition fluide pour les changements de couleur */
-}
-.menu-fac:target .fac-btn{
-    background-color: rgba(255, 215, 0, 1); /* Change le fond au focus ou clic pour indiquer que c'est interactif */
-    color:rgba(0, 0, 0, ); /* Change le texte en noir pour plus de contraste */
-    transform: scale(1.1);
-    outline: none; /* Enlève le contour de focus par défaut */
-}
-.fac-cont {
-    display: none;                /* Cache le menu par défaut */
-    position: absolute;
-    top: 100%;                    /* Se place juste sous "Facultés" */
-    right: 0;                     /* S'aligne à droite pour ne pas sortir de l'écran */
-    background-color: white;
-    min-width: 220px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    background: linear-gradient(180deg, rgb(248, 250, 252), rgb(241, 245, 249)); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 3px solid rgb(10, 25, 47); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
     z-index: 1000;
-    padding: 10px 0;
 }
-
-/* L'action de survol */
-.fac:hover .fac-cont {
-    display: block;               /* Affiche le menu quand on passe la souris */
+select{
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid rgb(200, 205, 210);
+    background: linear-gradient(45deg, rgb(10, 25, 47) 0%, rgb(25, 55, 90) 100%);
+    color: rgb(248, 250, 252);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.fac-cont li a {
-    color: #333 ;       /* Texte gris foncé sur fond blanc */
-    display: block;
-    padding: 10px 20px;
+select:hover {
+    background: linear-gradient(45deg, rgb(25, 55, 90), rgb(10, 25, 47));
+    transform: scale(1.05);
+}
+.active{
+    color: white !important;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(10, 25, 47, 0.3);
+    background: linear-gradient(45deg, rgb(25, 55, 90), rgb(10, 25, 47)) !important;
+}
+option {
+    background: rgb(248, 250, 252);
+    color: black;
+    font-weight: normal;
+}
+.logo-upc {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+.logo-upc:hover {
+    transform: scale(1.05);
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+.nav-links a {
     text-decoration: none;
+    color: black;
+    background: rgba(217, 216, 216, 0.875); 
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.51);
+    font-size: 1rem;
+    position: relative;
+    padding: 12px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
-
-.fac-cont li a:hover {
-    background-color: #f1f1f1;    /* Change le fond au survol des facultés */
+.nav-links a:hover {
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(10, 25, 47, 0.3);
+    background: linear-gradient(45deg, rgb(25, 55, 90), rgb(10, 25, 47));
 }
-/* --- 9. STYLE POUR LE CONTENU DE LA PAGE À PROPOS --- */
-
-
-/* --- Application du style global au formulaire --- */
-
-/* On centre le formulaire comme tes autres conteneurs */
+/* SECTION HERO */
+.hero-section {
+    background: linear-gradient(135deg, rgb(5, 22, 42) 0%, rgb(15, 37, 65) 100%);
+    color: rgb(248, 250, 252); 
+    padding: 80px 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease-in-out 0.3s forwards;
+    opacity: 0;
+}
+/* CONTENEURS & GRILLES */
+.container, main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px 5%;
+    animation: slideUp 0.5s ease-out 0.5s forwards;
+    opacity: 0;
+}
 main {
     max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
+    background: linear-gradient(145deg, rgb(250, 250, 250), rgb(238, 242, 246));
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgb(220, 225, 230);
 }
-
-/* Style du titre H1 (fond bleu comme ton Hero) */
-h1 {
-    background-color: rgb(0, 51, 102);
+.section-title, .title {
+    color: rgb(10, 25, 47); 
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+/* CORRECTION : Grille auto-responsive au lieu de 3 colonnes fixes */
+.renseignements-grid, .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+/* CARTES */
+.card, .grid div {
+    background: linear-gradient(145deg, rgb(250, 250, 250), rgb(238, 242, 246));
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgb(200, 205, 210); 
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover, .grid div:hover {
+    transform: translateY(-8px);
+    background: rgb(10, 25, 47);
+    box-shadow: 0 15px 30px rgba(10, 25, 47, 0.15);
+    border-color: rgb(10, 25, 47);
+}
+.card:hover h3, .card:hover p, .card:hover ul li, .card:hover .card-icon,
+.grid div:hover h3, .grid div:hover p {
+    color: rgb(248, 250, 252);
+}
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: rgb(10, 25, 47); 
+}
+.card h3, .grid div h3 {
+    color: rgb(25, 55, 90); 
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+.card p, .grid div p {
+    margin-bottom: 15px;
+    color: rgb(80, 90, 100); 
+    font-size: 0.95rem;
+}
+.card ul {
+    list-style-type: none;
+}
+.card ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    color: rgb(80, 90, 100);
+}
+.card ul li::before {
+    content: '→';
+    color: rgb(25, 55, 90);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+/* BOUTONS D'ACTION */
+.action-bas, .container-bouton {
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+.btn-primary, .btn-valider {
+    display: inline-block;
+    background: linear-gradient(135deg, rgb(10, 25, 47) 0%, rgb(25, 55, 90) 100%);
+    color: rgb(248, 250, 252); 
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px; 
+    box-shadow: 0 4px 10px rgba(10, 25, 47, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover, .btn-valider:hover {
+    background: linear-gradient(135deg, rgb(5, 15, 30) 0%, rgb(15, 37, 65) 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(10, 25, 47, 0.4);
+}
+/* FORMULAIRES */
+main h1 {
+    background: linear-gradient(135deg, rgb(5, 22, 42), rgb(15, 37, 65));
     color: white;
     padding: 20px;
     text-align: center;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-/* Style des groupes de champs (Sections IDENTITÉ, ADMISSION, etc.) */
-fieldset {
-    border: 1px solid rgb(220, 220, 220);
-    padding: 20px;
-    margin-bottom: 25px;
     border-radius: 8px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
 }
-
-/* Style des titres de sections */
+fieldset {
+    border: 1px solid rgb(200, 205, 210);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.4); 
+}
 legend {
-    color: rgb(31, 31, 165);
+    color: rgb(15, 37, 65); 
     font-weight: bold;
-    padding: 0 10px;
+    padding: 0 12px;
     font-size: 1.1em;
 }
-
-/* Alignement des labels et des champs */
-p {
-    margin-bottom: 15px;
+fieldset p, .form-row {
+    margin-bottom: 18px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     align-items: center;
 }
-
 label {
     font-weight: bold;
-    color: rgb(50, 50, 50);
-    min-width: 150px; /* Aligne les champs proprement */
+    color: rgb(70, 75, 80);
+    min-width: 160px; 
 }
-
-/* Style des champs de saisie */
-input[type="text"],
-input[type="tel"],
-input[type="email"] 
-input[type="date"]
-input[type="radio"]     {
-    flex: 1; /* Le champ prend l'espace disponible */
+input, select {
+    flex: 1; 
     min-width: 200px;
-    padding: 8px;
-    border: 1px solid rgb(200, 200, 200);
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
+    padding: 10px 12px;
+    border: 1px solid rgb(200, 205, 210);
+    border-radius: 6px;
+    font-family: inherit;
+    background-color: white;
+    transition: all 0.3s ease;
 }
-
-/* Focus sur les champs (quand on clique dedans) */
-input:focus {
+input:focus, select:focus {
     outline: none;
-    border-color: rgb(0, 51, 102);
-    box-shadow: 0 0 5px rgba(0, 51, 102, 0.2);
+    border-color: rgb(15, 37, 65);
+    box-shadow: 0 0 8px rgba(15, 37, 65, 0.25);
 }
-
-/* Style pour l'en-tête (Header de la fiche) */
 header {
     text-align: center;
     padding: 20px;
-    border-bottom: 2px solid rgb(0, 51, 102);
-    margin-bottom: 20px;
-    color: rgb(0, 51, 102);
+    border-bottom: 2px solid rgb(15, 37, 65);
+    margin-bottom: 25px;
+    color: rgb(15, 37, 65);
     font-weight: bold;
 }
-
 header p {
-    justify-content: center; /* Centre le texte dans les paragraphes flex */
+    justify-content: center; 
     margin-bottom: 5px;
 }
-
-
-
-/* Bouton d'envoi (optionnel, si tu en ajoutes un) */
-button[type="submit"] {
-    display: block;
-    width: 200px;
-    margin: 20px auto;
-    background-color: rgb(0, 51, 102); /* Ton bleu action */
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    
+/* "À PROPOS" */
+.temps {
+    position: relative; 
+    margin: 40px 0; 
+    padding-left: 30px; 
+    border-left: 4px solid rgb(25, 55, 90); 
 }
-/* Conteneur pour centrer le bouton */
-.container-bouton {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
+.title{
+    font-size: 1.5rem;
+    color: rgb(10, 25, 47); 
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
-
-/* Style du bouton Soumettre */
-.btn-valider {
-    background-color: rgb(0, 51, 102); /* Ton bleu pour l'action */
-    color: white;                     /* Texte blanc */
-    padding: 15px 35px;               /* Taille du bouton */
-    font-size: 18px;                  /* Texte bien lisible */
-    font-weight: bold;                /* Texte en gras */
-    border: none;                     /* Pas de bordure par défaut */
-    border-radius: 8px;               /* Coins arrondis comme tes cartes */
-    cursor: pointer;                  /* Le curseur devient une main */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Petite ombre légère */
-    transition: background-color 0.3s ease; /* Transition fluide pour la couleur */
-
+.etape {
+    position: relative; 
+    background: linear-gradient(145deg, rgb(255, 255, 255), rgb(245, 247, 250)); 
+    margin-bottom: 25px; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+    border: 1px solid rgba(200, 205, 210, 0.4); 
+    transition: all 0.3s ease; 
+    animation: slideUp 0.8s ease-out both;
 }
-
-/* Effet au survol de la souris */
-.btn-valider:hover {
-    background-color: rgb(0, 51, 102); /* Bleu un peu plus sombre au survol */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* L'ombre s'accentue */
-    
-}
-
-/* Effet quand on clique sur le bouton */
-.btn-valider:active {
-    transform: scale(0.98); /* Le bouton s'enfonce légèrement */
-}
-.btn-valider a{
-    text-decoration: none;
-    color: white;
-}
-.btn-bas{
-     background-color: rgb(0, 51, 102); /* Fond blanc */
-    display: flex; /* Aligne le logo et les liens côte à côte */
-    align-items: center; /* Centre verticalement les éléments */
-    padding: 10px 5%; /* Espace interne : 10px haut/bas, 5% sur les côtés */
-    border-bottom: 2px solid black /* Une petite ligne bleue en bas */
-
-    
-}
-.btn-bas a {
-    text-decoration: none;
-    color: white;
-}
-.img-container {
-    display: flex;
-    align-items: flex-start; /* Aligne l'image en haut du conteneur */
-    gap: 30px; /* Espace entre le logo et l'image */
-    width: 35%; /* Limite la largeur du conteneur pour que l'image ne soit pas trop grande */
-    
-}
-
-@media(max-width: 768px) {
-    .nav-bar{
+@media (max-width: 768px) {
+    .nav-bar { 
         flex-direction: column;
-        padding: 15px;
+        padding: 15px; 
+        gap: 15px;
     }
-    .nav-link, .nav-links{
+    .nav-links { 
         flex-direction: column;
-        margin-top: 10px;
+        width: 100%;
         gap: 10px;
     }
-    .hero-section, .hero{
-        flex-direction: column;
-        padding: 20px 10px;
-        text-align: center;
-    }
-    p{
-        flex-direction: column;
-        align-items: stretch;
-    }
-    label{
-        min-width: 100%;
-        margin-bottom: 5px;
-    }
-    input[tye="text"], input[type="tel"], input[type="email"],input[tye="date"]{
+    .nav-links li { 
         width: 100%;
-        min-width: auto;
     }
-    main, .container{
-        margin: 10px;
-        padding: 15px;
+    .nav-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        color: rgb(10, 25, 47);
+        border: 1px solid rgb(200, 205, 210);
+    }
+    .nav-links a:hover {
+        background: rgb(10, 25, 47);
+        color: white;
+        transform: none; /* Évite les bugs de tap sur écran tactile */
+    }
+    .hero-section {
+        padding: 40px 15px;
+        min-height: auto;
+    }
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+    /* Grille en 1 seule colonne sur mobile */
+    .renseignements-grid, .grid {
+        grid-template-columns: 1fr;
+    }
+    /* Formulaire en colonne : le label passe au-dessus de l'input */
+    fieldset p, .form-row { 
+        flex-direction: column; 
+        align-items: stretch;
+        gap: 6px;
+    }
+    label { 
+        min-width: 100%;
+        margin-bottom: 2px;
+    }
+    input, select { 
+        width: 100%; 
+        min-width: 100%;
+    }
+    main, .container { 
+        margin: 20px 10px;
+        padding: 20px 15px;
+    }
+    fieldset {
+        padding: 15px 10px;
+    }
+    main h1, .section-title, .title {
+        font-size: 1.5rem;
+    }
+    .btn-primary, .btn-valider {
+        width: 100%;
+        padding: 15px 20px;
+    }
+    .non{
+        display: none;
     }
 }
-

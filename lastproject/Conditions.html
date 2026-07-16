@@ -3,71 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission UPC 2025-2026</title>
+    <title>Admission UPC 2025-2026 - Excellence et Foi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-     <header class="hero">
-        <div class="adm-btn">
+    <nav class="nav-bar">
+        <img src="logoupc.png" alt="Logo de l'Université Protestante au Congo" class="logo-upc">
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="apropos.html">A Propos</a></li>
+            <li><a href="Conditions.html" class="active">Admission</a></li>
+            <select class="select-faculte" onchange="if(this.value) window.location.href=this.value;">
+                    <option value="" disabled selected>Choisir une Faculté...</option>
+                    <option value="Fasi.html">Sciences Informatiques</option> 
+                    <option value="Medecine.html">Médecine</option>
+                    <option value="Droit.html">Droit</option>
+                    <option value="Economie.html">Économie</option>
+                    <option value="theologie.html">Théologie</option>
+                </select>
+        </ul>
+    </nav>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
             <h1>Admission & Inscription</h1>
             <p>Année Académique 2025-2026 — Système LMD</p>
         </div>
-        <nav>
-           <ul class="nav-links"> 
-            <li class="fac" id="menu-fac"><a href="#" class="fac-btn" tabindex="0">Facultés▾</a>
+    </header>
+
+    <main class="container">
+        
+        <div class="renseignements-grid slide-up">
             
-                <ul class="fac-cont">
-                    <li><a href="Fasi.html">Sciences informatiques</a></li> 
-                    <li><a href="Medecine.html">Médecine</a></li>
-                    <li><a href="Droit.html">Droit</a></li>
-                    <li><a href="Economie.html">Économie</a></li>
-                    <li><a href="theologie.html">Théologie</a></li>
+            <section class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>Critères d'Admission</h3>
+                <p><strong>Examen d'État :</strong> Avoir obtenu au moins <strong>60%</strong> pour l'admission directe.</p>
+                <p><strong>Concours d'admission :</strong> Obligatoire pour tous en Médecine, et pour les candidats ayant obtenu moins de 60% dans les autres facultés.</p>
+            </section>
+
+            <section class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <h3>Dossier à fournir (Scan PDF)</h3>
+                <ul class="dossier-list">
+                    <li>Formulaire d'inscription en ligne dûment rempli.</li>
+                    <li>Attestation de réussite ou Diplôme d'État.</li>
+                    <li>Bulletins de la 3ème et 4ème des Humanités.</li>
+                    <li>Attestation de naissance & certificat médical.</li>
+                    <li>Photo passeport numérique récente.</li>
                 </ul>
-                <a href="#" class="fac-btn"><li><a href="index.html"> Retour à l'accueil</a></li></a>
-            
+            </section>
 
-            </li>
-          </ul>
-        </nav>
-     </header>
+            <section class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <h3>Frais d'inscription</h3>
+                <p>Montant : <strong>... $ USD</strong></p>
+                <p>Banque agréée : <strong>RAWBANK</strong></p>
+                <p>Numéro de Compte : <strong>..............-...USD</strong></p>
+                <p>*Conservez soigneusement votre preuve de versement.</p>
+            </section>
 
-    <main class="main-btn">
-        
-        <section class="btn">
-            <h2 class="btn-btn">Critères d'Admission</h2>
-            <p><strong>Examen d'État :</strong> Avoir obtenu au moins 60%.</p>
-            <p><strong>Concours :</strong> Obligatoire pour tous en Médecine, et pour ceux ayant moins de 60% dans les autres facultés.</p>
-        </section>
+        </div>
 
-        <section class="btn">
-            <h2 class="btn-btn">Dossier à fournir (Scan PDF)</h2>
-            <ul class="dossier">
-                <li>Formulaire d'inscription en ligne rempli.</li>
-                <li>Attestation de réussite ou Diplôme d'État.</li>
-                <li>Bulletins de 3ème et 4ème Humanités.</li>
-                <li>Attestation de naissance et certificat médical.</li>
-                <li>Photo passeport numérique.</li>
-            </ul>
-        </section>
-
-        <section class="btn-inscription">
-            <h2 class="btn-btn">Frais d'inscription</h2>
-            <p>Montant : <strong>...$</strong></p>
-            <p>Banque : <strong>RAWBANK</strong></p>
-            <p>Compte : <strong>..............-...USD</strong></p>
-        </section>
-
-        
-
-        <div class="action">
-        
-             <div id="fac-btn"><a href="#menu-fac" class="cta-btn">S'inscrire en ligne ici en choisissant la faculté dans le menu déroulant Facultés ci-dessus pour commencer:</a></div>
+        <div class="action-bas slide-up" style="margin-top: 50px;">
+            <div class="card">
+                <h3>Prêt à postuler ?</h3>
+                <p>
+                    Pour vous inscrire en ligne, remontez en haut de la page et sélectionnez la filière de votre choix dans la liste <strong>"Choisir une Faculté"</strong> de la barre de navigation.
+                </p>
+                <a href="#menu-fac" class="btn-primary" style="text-decoration: none;">Remonter au menu d'inscription</a>
+            </div>
         </div>
         
-       
     </main>
 
+    <footer style="text-align: center; padding: 40px 20px 20px; color: rgb(100,110,120); font-size: 0.9rem;">
+        &copy; 2026 : Mulimbi malibilo
+    </footer>
 
 </body>
 </html>

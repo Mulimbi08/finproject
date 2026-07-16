@@ -4,69 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPC - Renseignements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <nav class="nav-bar">
         <div class="logo">
             <img src="logoupc.png" alt="Logo de l'Université Protestante au Congo" class="logo-upc">
-    
-    
-        <ul class="nav-link">
-            <li><a href="index.html" class="principale">Accueil</a></li>
-        
-            
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="apropos.html">A Propos</a></li>
+            <li><a href="Conditions.html">Admission</a></li>
+            <select class="select-faculte" onchange="if(this.value) window.location.href=this.value;">
+                    <option value="" disabled selected>Choisir une Faculté...</option>
+                    <option value="Fasi.html">Sciences Informatiques</option> 
+                    <option value="Medecine.html">Médecine</option>
+                    <option value="Droit.html">Droit</option>
+                    <option value="Economie.html">Économie</option>
+                    <option value="theologie.html">Théologie</option>
+                </select>
         </ul>
     </nav>
 
-    
     <header class="hero-section">
-       
-            <div class="hero-content">
-            <h1> BIENVENUE A L'UNIVERSITÉ PROTESTANTE AU CONGO</h1> 
+        <div class="hero-content">
+            <h1>BIENVENUE À L'UNIVERSITÉ PROTESTANTE AU CONGO</h1> 
             <p>Formez-vous pour l'excellence, la science et l'avenir de notre nation.</p> 
-            </div>
-            
+        </div>
     </header>
 
-
-    <main class="renseignements">
+    <main class="renseignements container">
         <h2 class="section-title">Renseignements Généraux</h2> 
-        <div class="renseignements-importants">
-            
-            <div class="impo">
+        
+        <div class="renseignements-grid">
+            <div class="card impo">
+                <div class="card-icon"><i class="fas fa-map-marker-alt fa-2x"></i></div>
                 <h3>Notre localisation</h3>
-                <p>L'UPC est idéalement située au cœur de la ville de Kinshasa, dans la commune de <strong>Lingwala</strong>, sur l'<strong>Avenue de la Libération</strong> (Ex-Avenue du 24 Novembre).
+                <p>L'UPC est idéalement située au cœur de la ville de Kinshasa, dans la commune de <strong>Lingwala</strong>, sur l'<strong>Avenue de la Libération</strong> (Ex-Avenue du 24 Novembre).</p>
             </div>
 
-            <div class="impo">
+            <div class="card impo">
+                <div class="card-icon"><i class="fas fa-user-graduate fa-2x"></i></div>
                 <h3>Conditions d'admission</h3> 
-                <p>Pour être admis en première année d'études de bachelier à l'UPC, le candidat doit remplir les critères suivants :</p>
+                <p>Pour être admis en première année de bachelier, le candidat doit :</p>
                 <ul>
-                    <li>Être détenteur d'un diplôme d'État (ou d'un titre équivalent).</li>
-                    <li>Avoir obtenu au moins 60% aux examens d'État (pour un accès direct selon les facultés, ou passer un test d'admission).</li>
-                    <li>Présenter un dossier complet (bulletins de 5<sup>e</sup> et 6<sup>e</sup> des humanités, attestation de naissance, photos passeport).</li>
+                    <li>Être détenteur d'un diplôme d'État (ou équivalent).</li>
+                    <li>Avoir obtenu au moins 60% aux examens d'État (ou test d'admission).</li>
+                    <li>Présenter un dossier complet (bulletins, attestation, photos).</li>
                 </ul>
             </div> 
 
-            <div class="impo">
+            <div class="card impo">
+                <div class="card-icon"><i class="fas fa-book-open fa-2x"></i></div>
                 <h3>Nos départements & cycles</h3>
-                <p>L'UPC organise des enseignements selon le système LMD (Licence-Master-Doctorat) à travers plusieurs départements d'élite :</p>
+                <p>Enseignements selon le système LMD à travers nos départements d'élite :</p>
                 <ul>
-                    <li><strong>Sciences informatiques :</strong> Génie informatique, Réseaux, Intelligence Artificielle.</li>
-                    <li><strong>Administration des Affaires & Économie :</strong> Gestion Financière, Marketing, Économie politique.</li>
-                    <li><strong>Droit :</strong> Droit public, Droit privé et judiciaire, Droit Économique.</li> 
-                    <li><strong>Médecine :</strong> Médecine Générale et santé communautaire.</li>
+                    <li><strong>Informatique :</strong> Génie, Réseaux, IA.</li>
+                    <li><strong>Économie :</strong> Finance, Marketing, Éco politique.</li>
+                    <li><strong>Droit :</strong> Public, Privé, Économique.</li> 
+                    <li><strong>Médecine :</strong> Générale et santé communautaire.</li>
                 </ul>
             </div>
-           </div>
-           <div>
-        <ul>
-            <button class="btn-bas"><a href="apropos.html">A Propos</a></button>
-        </ul>
-    </div>
+        </div>
+
+        <div class="action-bas container-bouton">
+            <a href="apropos.html" class="btn-valider">Explorer</a>
+        </div>
     </main>
-    
 </body>
 </html>
