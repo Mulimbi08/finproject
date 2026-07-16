@@ -1,0 +1,355 @@
+/* 1. Reset : On enlève les marges par défaut du navigateur pour avoir le contrôle */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Pour que les bordures ne fassent pas déborder les boîtes */
+}
+
+/* 2. Style du corps de la page */
+body {
+    font-family: Arial, sans-serif; /* Une   police simple et lisible */
+    line-height: 1.6; /* Espace entre les lignes pour que ce soit moins serré */
+    color: rgb(50, 50, 50); /* Couleur du texte : un gris très foncé presque noir */
+    background-color: rgb(245, 245, 245); /*  Fond de page gris très clair */
+}
+
+/* 3. La barre de navigation */
+.nav-bar {
+    background-color: rgb(255, 255, 255); /* Fond blanc */
+    display: flex; /* Aligne le logo et les liens côte à côte */
+    justify-content: space-between; /* Pousse le logo à gauche et les liens à droite */
+    align-items: center; /* Centre verticalement les éléments */
+    padding: 10px 5%; /* Espace interne : 10px haut/bas, 5% sur les côtés */
+    border-bottom: 2px solid rgb(0, 51, 102); /* Une petite ligne bleue en bas */
+}
+
+.logo-upc {
+    height: 60px; /* On fixe la hauteur du logo pour qu'il ne soit pas trop grand */
+
+}
+
+.nav-links {
+    display: flex; /* Aligne les liens horizontalement */
+    list-style: none; /* Enlève les points des listes */
+    list-style-type: none; /* Enlève les numéros des listes */
+    margin: 0; /* Enlève les marges par défaut */
+    padding: auto;
+}
+.nav-link {
+    display: flex; /* Aligne les liens horizontalement */
+    list-style: none; /* Enlève les points des listes */
+    list-style-type: none; /* Enlève les numéros des listes */
+    margin: 0; /* Enlève les marges par défaut */
+    padding: auto;
+}
+.nav-links li {
+    margin-left: 20px; /* Espace entre chaque lien */
+}
+.nav-link li {
+    margin-left: 20px; /* Espace entre chaque lien */
+}
+
+.nav-links a {
+    text-decoration: none; /* Enlève le soulignement des liens */
+    color:white; /* Couleur bleue UPC */
+    font-weight: bold; /* Met le texte en gras */
+}
+.nav-link a {
+    text-decoration: none; /* Enlève le soulignement des liens */
+    color:rgb(0, 51, 102); /* Couleur bleue UPC */
+    font-weight: bold; /* Met le texte en gras */
+}
+
+/* 4. Section Hero (Le haut des pages) */
+.hero, .hero-section {
+    background-color: rgb(0, 51, 102); /* Un bleu profond pour faire ressortir le titre */
+    color: white; /* Texte blanc pour contraster avec le fond */
+    padding: 40px 5%; /* Grand espace pour donner de l'importance */
+    justify-content: space-between; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+}
+
+
+
+
+/* 5. Les conteneurs et titres */
+.container, .renseignements, .main-btn {
+    max-width: 1000px; /* Empêche le contenu de s'étaler trop largement sur grand écran */
+    margin: 20px auto; /* Centre le bloc au milieu de la page */
+    padding: 20px;
+    background-color: rgb(255, 255, 255); /* Fond blanc pour le contenu */
+}
+
+h1 {
+    color:white; /* Tous les titres seront en bleu *
+    margin-bottom: 15px; /* Espace sous les titres */
+}
+h2, h3{
+    color: rgb(31, 31, 165); /* Tous les titres seront en bleu */
+    margin-bottom: 15px; /* Espace sous les titres */
+}
+
+/* 6. Les cartes (Sections "impo" et "facultés") */
+.impo, .facultéinfo, .facultédroit, .facultétheologie, .facultéfase, .facultémedecine, .btn {
+    border: 1px solid rgb(220, 220, 220); /* Bordure fine grise */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Arrondit légèrement les coins */
+}
+
+
+
+/* 8. Les boutons (CTA) */
+.cta-btn, .conditions {
+    display: inline-block; /* Permet de donner une forme de bouton */
+    background-color: rgb(0, 51, 102); /* Une couleur verte pour l'action (Inscription) */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.fac {
+    position: relative;           /* Indispensable pour que le menu sache où s'afficher */
+    list-style: none;
+}
+
+.fac-btn {
+    color: white ;      /* Force le blanc sur le fond bleu */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition:all 0.5s ease; /* Transition fluide pour les changements de couleur */
+}
+.menu-fac:target .fac-btn{
+    background-color: rgba(255, 215, 0, 1); /* Change le fond au focus ou clic pour indiquer que c'est interactif */
+    color:rgba(0, 0, 0, ); /* Change le texte en noir pour plus de contraste */
+    transform: scale(1.1);
+    outline: none; /* Enlève le contour de focus par défaut */
+}
+.fac-cont {
+    display: none;                /* Cache le menu par défaut */
+    position: absolute;
+    top: 100%;                    /* Se place juste sous "Facultés" */
+    right: 0;                     /* S'aligne à droite pour ne pas sortir de l'écran */
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+/* L'action de survol */
+.fac:hover .fac-cont {
+    display: block;               /* Affiche le menu quand on passe la souris */
+}
+.fac-cont li a {
+    color: #333 ;       /* Texte gris foncé sur fond blanc */
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.fac-cont li a:hover {
+    background-color: #f1f1f1;    /* Change le fond au survol des facultés */
+}
+/* --- 9. STYLE POUR LE CONTENU DE LA PAGE À PROPOS --- */
+
+
+/* --- Application du style global au formulaire --- */
+
+/* On centre le formulaire comme tes autres conteneurs */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Style du titre H1 (fond bleu comme ton Hero) */
+h1 {
+    background-color: rgb(0, 51, 102);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Style des groupes de champs (Sections IDENTITÉ, ADMISSION, etc.) */
+fieldset {
+    border: 1px solid rgb(220, 220, 220);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+/* Style des titres de sections */
+legend {
+    color: rgb(31, 31, 165);
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 1.1em;
+}
+
+/* Alignement des labels et des champs */
+p {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    color: rgb(50, 50, 50);
+    min-width: 150px; /* Aligne les champs proprement */
+}
+
+/* Style des champs de saisie */
+input[type="text"],
+input[type="tel"],
+input[type="email"] 
+input[type="date"]
+input[type="radio"]     {
+    flex: 1; /* Le champ prend l'espace disponible */
+    min-width: 200px;
+    padding: 8px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+/* Focus sur les champs (quand on clique dedans) */
+input:focus {
+    outline: none;
+    border-color: rgb(0, 51, 102);
+    box-shadow: 0 0 5px rgba(0, 51, 102, 0.2);
+}
+
+/* Style pour l'en-tête (Header de la fiche) */
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid rgb(0, 51, 102);
+    margin-bottom: 20px;
+    color: rgb(0, 51, 102);
+    font-weight: bold;
+}
+
+header p {
+    justify-content: center; /* Centre le texte dans les paragraphes flex */
+    margin-bottom: 5px;
+}
+
+
+
+/* Bouton d'envoi (optionnel, si tu en ajoutes un) */
+button[type="submit"] {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    background-color: rgb(0, 51, 102); /* Ton bleu action */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+/* Conteneur pour centrer le bouton */
+.container-bouton {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Style du bouton Soumettre */
+.btn-valider {
+    background-color: rgb(0, 51, 102); /* Ton bleu pour l'action */
+    color: white;                     /* Texte blanc */
+    padding: 15px 35px;               /* Taille du bouton */
+    font-size: 18px;                  /* Texte bien lisible */
+    font-weight: bold;                /* Texte en gras */
+    border: none;                     /* Pas de bordure par défaut */
+    border-radius: 8px;               /* Coins arrondis comme tes cartes */
+    cursor: pointer;                  /* Le curseur devient une main */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Petite ombre légère */
+    transition: background-color 0.3s ease; /* Transition fluide pour la couleur */
+
+}
+
+/* Effet au survol de la souris */
+.btn-valider:hover {
+    background-color: rgb(0, 51, 102); /* Bleu un peu plus sombre au survol */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* L'ombre s'accentue */
+    
+}
+
+/* Effet quand on clique sur le bouton */
+.btn-valider:active {
+    transform: scale(0.98); /* Le bouton s'enfonce légèrement */
+}
+.btn-valider a{
+    text-decoration: none;
+    color: white;
+}
+.btn-bas{
+     background-color: rgb(0, 51, 102); /* Fond blanc */
+    display: flex; /* Aligne le logo et les liens côte à côte */
+    align-items: center; /* Centre verticalement les éléments */
+    padding: 10px 5%; /* Espace interne : 10px haut/bas, 5% sur les côtés */
+    border-bottom: 2px solid black /* Une petite ligne bleue en bas */
+
+    
+}
+.btn-bas a {
+    text-decoration: none;
+    color: white;
+}
+.img-container {
+    display: flex;
+    align-items: flex-start; /* Aligne l'image en haut du conteneur */
+    gap: 30px; /* Espace entre le logo et l'image */
+    width: 35%; /* Limite la largeur du conteneur pour que l'image ne soit pas trop grande */
+    
+}
+
+@media(max-width: 768px) {
+    .nav-bar{
+        flex-direction: column;
+        padding: 15px;
+    }
+    .nav-link, .nav-links{
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 10px;
+    }
+    .hero-section, .hero{
+        flex-direction: column;
+        padding: 20px 10px;
+        text-align: center;
+    }
+    p{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    label{
+        min-width: 100%;
+        margin-bottom: 5px;
+    }
+    input[tye="text"], input[type="tel"], input[type="email"],input[tye="date"]{
+        width: 100%;
+        min-width: auto;
+    }
+    main, .container{
+        margin: 10px;
+        padding: 15px;
+    }
+}
+

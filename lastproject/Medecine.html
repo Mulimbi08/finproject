@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fiche d'Inscription - UPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p>UNIVERSITÉ PROTESTANTE AU CONGO</p>
+        <p>Croisement des avenues de la Libération et de la Victoire</p>
+        <p>Boîte Postale 4745 Kinshasa 2</p>
+        <p>Site web: www.upc-rdc.cd</p>
+    </header>
+
+
+   <main>
+        <h1>FICHE D'INSCRIPTION </h1>
+
+        <form action="soumettre.html" method="get">
+            
+            <fieldset>
+                <label for="matricule">Matricule :</label>
+                <input type="text" id="matricule" name="matricule"  readonly placeholder="(Ne pas remplir)">
+
+                <label for="code">Code :</label>
+                <input type="text" id="code" name="code"  readonly placeholder="(Ne pas remplir)" >
+            </fieldset>
+
+    
+            <fieldset>
+                <legend>IDENTITÉ</legend>
+                
+                <p>
+                    <label for="nom">Nom et Post-nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                    
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </p>
+
+                <p>
+                    <label for="sexe">Sexe :</label>
+                    <input type="radio" id="sexe" name="sexe" value="M" required>
+                    <label for="sexe">Masculin</label>
+                    <input type="radio" id="sexe" name="sexe" value="F" required>
+                    <label for="sexe">Féminin</label>
+                    
+                    <label for="naissance">Lieu et date de naissance :</label>
+                    <input type="date" id="naissance" name="naissance" required>
+                </p>
+
+                <p>
+                    <label for="nationalite">Nationalité :</label>
+                    <input type="text" id="nationalite" name="nationalite" required>
+                    
+                    <label for="pays_origine">Pays d'origine :</label>
+                    <input type="text" id="pays_origine" name="pays_origine" required>
+                </p>
+
+                <p>
+                    <label for="province">Province d'origine :</label>
+                    <input type="text" id="province" name="province" required>
+                    
+                    <label for="district">District :</label>
+                    <input type="text" id="district" name="district" required>
+                </p>
+
+                <p>
+                    <label for="secteur">Secteur d'origine :</label>
+                    <input type="text" id="secteur" name="secteur" required>
+                    
+                    <label for="territoire">Territoire :</label>
+                    <input type="text" id="territoire" name="territoire" required>
+                </p>
+
+                <p>
+                    <label for="etat_civil">État Civil :</label>
+                    <input type="text" id="etat_civil" name="etat_civil" required>
+                    
+                    <label for="conjoint">Nom du conjoint :</label>
+                    <input type="text" id="conjoint" name="conjoint" required>
+                </p>
+
+                <p>
+                    <label for="religion">Confession religieuse :</label>
+                    <input type="text" id="religion" name="religion" required>
+                </p>
+
+                <p>
+                    <label for="adresse">Adresse de l'étudiant :</label>
+                    <input type="text" id="adresse" name="adresse" required>
+                </p>
+
+                <p>
+                    <label for="telephone">Téléphone :</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                    
+                    <label for="email">Courriel (E-mail) :</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>ADMISSION</legend>
+                <p>
+                    <label for="classe">Classe :</label>
+                    <input type="text" id="classe" name="classe" required>
+                    
+                    <label for="faculte">Faculté sollicitée :</label>
+                    <input type="text" id="faculte" name="faculte" required>
+                    
+                    <label for="annee_acad">Année académique :</label>
+                    <select id="annee_acad" name="annee_acad" required>
+                        <option value="">Sélectionnez une année</option>
+                        <option value="2023-2024">2023-2024</option>
+                        <option value="2024-2025">2024-2025</option>
+                        <option value="2025-2026">2025-2026</option>
+                    </select>
+                </p>
+            </fieldset>
+
+    
+            <fieldset>
+                <legend>AUTRES RENSEIGNEMENTS</legend>
+                
+                <p>
+                    <label for="pere">Noms du Père :</label>
+                    <input type="text" id="pere" name="pere" required>
+                    
+                    <label for="profession_pere">Profession :</label>
+                    <input type="text" id="profession_pere" name="profession_pere" required>
+                </p>
+
+                <p>
+                    <label for="mere">Noms de la Mère :</label>
+                    <input type="text" id="mere" name="mere" required>
+                    
+                    <label for="profession_mere">Profession :</label>
+                    <input type="text" id="profession_mere" name="profession_mere" required>
+                </p>
+
+                <p>
+                    <label for="adresse_parents">Adresse des parents :</label>
+                    <input type="text" id="adresse_parents" name="adresse_parents" required>
+                </p>
+
+                
+                <fieldset>
+                    <legend>Qui peut-on aviser en cas d'urgence ?</legend>
+                    <p>
+                        <label for="urgence_nom">Noms :</label>
+                        <input type="text" id="urgence_nom" name="urgence_nom" required>
+                        
+                        <label for="urgence_profession">Profession :</label>
+                        <input type="text" id="urgence_profession" name="urgence_profession" required>
+                    </p>
+                    <p>
+                        <label for="urgence_adresse">Adresse complète :</label>
+                        <input type="text" id="urgence_adresse" name="urgence_adresse" required>
+                        
+                        <label for="urgence_tel">Tél :</label>
+                        <input type="tel" id="urgence_tel" name="urgence_tel" required>
+                    </p>
+                </fieldset>
+            </fieldset>
+        
+        <div class="container-bouton">
+    <button type="submit" class="btn-valider">SOUMETTRE LA FICHE D'INSCRIPTION</button>
+</div>
+</form>
+    </main>
+
+
+    <footer>
+        <p><small>Cette fiche concerne les inscriptions en classes de recrutement et les inscriptions spéciales.</small></p>
+    </footer>
+
+</body>
+</html>
